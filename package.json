@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "alphabetcart",
+  "version": "1.0.0",
+  "description": "A basic shopping cart app using AngularJS",
+  "main": "server.js",
+  "author": "Rebecca Catanzaro",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.4"
+  }
+}

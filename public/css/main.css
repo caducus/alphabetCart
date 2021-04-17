@@ -1,0 +1,94 @@
+* {
+  border: 1px solid gold;
+}
+
+:root {
+  --font-headers: "Roboto Condensed", sans-serif;
+  --font-text: "Exo 2", sans-serif;
+}
+
+body {
+  font-family: var(--font-text);
+  margin: 0;
+}
+
+/* ==========================
+| | Mobile View
+========================== */
+
+/* ====== general ====== */
+
+/* ====== header ======= */
+
+.mainTitle {
+  background-color: lightblue;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+h1 {
+  font-family: var(--font-headers);
+  text-align: center;
+}
+
+h3 {
+  font-family: var(--font-headers);
+  text-align: center;
+}
+
+/* ======= cards ======= */
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tableHeader {
+  background-color: steelblue;
+}
+
+.cartCalculations {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.nameAndImage {
+  text-align: center;
+}
+
+img {
+  width: 50px;
+}
+
+/* .itemContainer {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.itemCard {
+  width: 45%;
+  padding: 2px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: steelblue;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.itemName {
+  background-color: steelblue;
+  padding: .5px;
+}
+
+h3 {
+  color: white;
+  padding: 2px;
+} */
+
+/* ==========================
+| | Browser View
+========================== */

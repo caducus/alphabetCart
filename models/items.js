@@ -9,21 +9,19 @@ const mongoose = require("mongoose");
 // ==========================
 
 const itemSchema = new mongoose.Schema({
-  itemName: {type: String, required: true},
-  itemID: {type: Number, required: true},
-  itemSelected: Number,
-  itemDescription: String,
-  itemImageLink: String,
-  itemPrices: [{
-    itemQuantity: Number,
-    itemPrice: Number
-  }]
+  name: {type: String, required: true},
+  alphabetID: {type: Number, required: true, unique: true},
+  selected: Number,
+  description: String,
+  image: String,
+  price: Number,
+  stockQuantity: Number
 });
 
-const Item = mongoose.model("Item", itemSchema);
+const Items = mongoose.model("Item", itemSchema);
 
 // ==========================
 // Export
 // ==========================
 
-module.exports = Item;
+module.exports = Items;

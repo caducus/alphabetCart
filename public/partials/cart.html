@@ -1,0 +1,15 @@
+<div ng-show="currentCart.length !== 0" class="cart">
+  <div ng-repeat="item in currentCart" class="cartCardContainer">
+    <div class="cartCardImage">
+      <img ng-src="{{ item.image }}"/>
+    </div>
+    <div class="cartCardInfo">
+      <ul class="displayInline">
+        <li>{{ item.name }}</li>
+        <li>qty: {{ item.count }}</li>
+      </ul>
+      <p ng-click="removeFromCart(item)"><a href="#">Remove (1) from Cart</a></p>
+      <p>${{ item.price * item.count}}</p>
+    </div>
+  </div>
+</div>

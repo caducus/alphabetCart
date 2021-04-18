@@ -1,0 +1,63 @@
+<!-- List all items for sale -->
+<!-- Repeated item cards start here -->
+<div class="showAllItems">
+  <div class="itemCard" ng-repeat="item in ctrl.items">
+    <div class="itemCardTitleInfo">
+      <div class="itemCardImage">
+        <img ng-src={{item.image}}>
+      </div>
+      {{ item.name }}
+    </div>
+    <div>
+      <div class="itemCardInfo">
+        <p>{{ item.description }}</p>
+        <ul>
+          <li>In Stock: {{ item.stockQuantity }}</li>
+          <li>${{ item.price }}</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="addEditDelete">
+          <li ng-if="ctrl.userIsAdmin"
+              ng-click="ctrl.indexOfEditForm = item._id"
+              ng-dblclick="ctrl.indexOfEditForm = null">
+              <a href="#">Edit</a>
+          </li>
+          <li ng-if="ctrl.userIsAdmin"
+              ng-click="ctrl.deleteItem(item)">
+              <a href="#">Delete</a>
+          </li>
+          <li ng-if="ctrl.loggedInUser"
+              ng-click="addToCart(item)">
+              <a href="#">Add to Cart</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div  class="itemCardEditForm"
+          ng-if="ctrl.indexOfEditForm === item._id">
+      <form ng-submit="ctrl.editItem(item)">
+        <input  type="text"
+                ng-value="item.name"
+                ng-model="ctrl.updatedName"/>
+        <input  type="number"
+                ng-value="item.alphabetID"
+                ng-model="ctrl.updatedAlphabetID"/>
+        <input  type="text"
+                ng-value="item.description"
+                ng-model="ctrl.updatedDescription"/>
+        <input  type="number"
+                ng-value="item.price"
+                ng-model="ctrl.updatedCost"/>
+        <input  type="text"
+                ng-value="item.image"
+                ng-model="ctrl.updatedImage"/>
+        <input  type="number"
+                ng-value="item.stockQuantity"
+                ng-model="ctrl.updatedQuantity"/><br>
+        <input type="submit" value="edit item" />
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Repeated item cards end here -->

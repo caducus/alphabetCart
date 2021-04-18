@@ -1,27 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" ng-app="barebonesCart">
+<html lang="en" dir="ltr" ng-app="AlphabetCart">
   <head>
     <meta charset="utf-8">
     <title>The Alphabet Emporium</title>
     <!-- ======================
-    | | STYLESHEETS
-    ======================= -->
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100&family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="public/css/main.css">
-  </head>
-  <body>
-    <!-- ======================
-    | | MAIN
-    ======================= -->
-    <div ng-view></div>
-    <!-- ======================
     | | SCRIPTS
     ======================= -->
-    <script src="node_modules/angular/angular.min.js"></script>
-    <script src="node_modules/angular-route/angular-route.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="public/js/app.js"></script>
-    <script src="public/cart/cart.js"></script>
-    <script src="public/checkout/checkout.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" charset="utf-8"></script>
+    <script src="/js/app.js" charset="utf-8"></script>
+    <!-- ======================
+    | | STYLESHEETS
+    ======================= -->
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-controller="MainCtrl as ctrl">
+    <div class="wrapper">
+      <!-- ======================
+      | | HEADER
+      ======================= -->
+      <header>
+        <h1>The Alphabet Emporium</h1>
+      </header>
+        <!-- ===== NAVIGATION ===== -->
+        <nav>
+        <ul class="displayInline">
+          <li ng-if="!ctrl.loggedInUser"
+              ng-click="ctrl.showNewForm = !ctrl.showNewForm; ctrl.showLogInForm = false"><a href="#">Sign Up</a></li>
+          <li ng-if="!ctrl.loggedInUser"
+              ng-click="ctrl.showLogInForm = !ctrl.showLogInForm; ctrl.showNewForm = false"><a href="#">Log In</a></li>
+          <span ng-if="ctrl.loggedInUser">
+            <li ng-if="ctrl.shopView"
+                ng-click="ctrl.changeInclude('cart'); ctrl.shopView = false;">
+              <a href="#">Cart</a> {{ ctrl.numberOfItems }}
+            </li>
+            <li ng-if="!ctrl.shopView"
+                ng-click="ctrl.changeInclude('shop'); ctrl.shopView = true">
+              <a href="#">Store</a>
+            </li>
+            <li ng-click="ctrl.logOut()"><a href="#">Log Out</a></li>
+          </span>
+        </ul>
+      </nav>
+      <div ng-if="ctrl.showNewForm">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <form ng-submit="ctrl.createUser()">
+            <input type="text" placeholder="username" ng-model="ctrl.createdUsername" />
+            <input type="password" placeholder="password" ng-model="ctrl.createdPassword" />
+            <input type="submit" value="Create"/>
+          </form>
+        </fieldset>
+      </div>
+      <div ng-if="ctrl.showLogInForm">
+        <fieldset>
+          <legend>Log In</legend>
+          <form ng-submit="ctrl.logIn()">
+            <input type="text" placeholder="username" ng-model="ctrl.username" />
+            <input type="password" placeholder="password" ng-model="ctrl.password" />
+            <input type="submit" value="Log In" />
+          </form>
+        </fieldset>
+      </div>
+      <div ng-if="ctrl.userIsAdmin">
+        <form ng-submit="ctrl.addItem()">
+          <fieldset>
+            <legend>Add an Item</legend>
+              <input type="text" placeholder="name" ng-model="ctrl.name" />
+              <input type="number" placeholder="alphabetID" ng-model="ctrl.alphabetID" />
+              <input type="text" placeholder="description" ng-model="ctrl.description" />
+              <input type="text" placeholder="image link" ng-model="ctrl.image" />
+              <input type="number" placeholder="price" ng-model="ctrl.price" />
+              <input type="number" placeholder="stockQuantity" ng-model="ctrl.stockQuantity" />
+              <br>
+              <input type="submit" value="add item" />
+          </fieldset>
+        </form>
+      </div>
+      <!-- ======================
+      | | MAIN
+      ======================= -->
+      <main ng-include="ctrl.includePath">
+        <!-- ALL PARTIALS ARE DISPLAYED HERE -->
+      </main>
+      <!-- ======================
+      | | FOOTER
+      ======================= -->
+      <footer>
+        <p>To explore regular functions, you can create a username and password.</p>
+        <p>To test admin functions, please log in using: isAdmin / password</p>
+        <h6>Created By: Becka Catanzaro, 2021</h6>
+      </footer>
+    </div>
   </body>
 </html>

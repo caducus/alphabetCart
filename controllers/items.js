@@ -8,17 +8,17 @@ const router = express.Router();
 const Item = require("../models/items.js");
 
 // ==========================
-// Get Routes
+// Index Route
 // ==========================
 
 router.get("/", (req, res) => {
   Item.find({}, (error, foundItem) => {
-    res.json(foundItem)
+    res.json(foundItem);
   });
 });
 
 // ==========================
-// Post Routes
+// Create Route
 // ==========================
 
 router.post("/", (req, res) => {
@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
 });
 
 // ==========================
-// Put Routes
+// Update Route
 // ==========================
 
 router.put("/:id", (req, res) => {
@@ -38,7 +38,7 @@ router.put("/:id", (req, res) => {
 });
 
 // ==========================
-// Delete Routes
+// Delete Route
 // ==========================
 
 router.delete("/:id", (req, res) => {

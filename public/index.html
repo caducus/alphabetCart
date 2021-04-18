@@ -61,21 +61,6 @@
           </form>
         </fieldset>
       </div>
-      <div ng-if="ctrl.userIsAdmin">
-        <form ng-submit="ctrl.addItem()">
-          <fieldset>
-            <legend>Add an Item</legend>
-              <input type="text" placeholder="name" ng-model="ctrl.name" />
-              <input type="number" placeholder="alphabetID" ng-model="ctrl.alphabetID" />
-              <input type="text" placeholder="description" ng-model="ctrl.description" />
-              <input type="text" placeholder="image link" ng-model="ctrl.image" />
-              <input type="number" placeholder="price" ng-model="ctrl.price" />
-              <input type="number" placeholder="stockQuantity" ng-model="ctrl.stockQuantity" />
-              <br>
-              <input type="submit" value="add item" />
-          </fieldset>
-        </form>
-      </div>
       <!-- ======================
       | | MAIN
       ======================= -->

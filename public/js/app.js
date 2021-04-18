@@ -6,6 +6,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
   this.showLogInForm = false;
   this.indexOfEditForm;
   $scope.numberOfItems = 0;
+  $scope.totalCost = 0;
   $scope.currentCart = [];
 
   // partial navigation
@@ -107,6 +108,14 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
       }
     }).then(function(response) {
       console.log(response.data);
+      // empty form upon submit
+      controller.name = null;
+      controller.alphabetID = null;
+      controller.description = null;
+      controller.image = null;
+      controller.price = null;
+      controller.stockQuantity = null;
+      // update the items displayed on the page
       controller.getItems();
     }, function(error) {
       console.log(error);
@@ -139,6 +148,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
       method: "DELETE",
       url: "/items/" + item._id
     }).then(function(response) {
+        // update the items displayed on the page
        controller.getItems();
     }, function(error) {
       console.log(error);
@@ -176,6 +186,8 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
     };
     // add +1 to the total number of items in the cart
     $scope.numberOfItems += 1;
+    // add the cost to the total cost
+    $scope.total(item.price, "add");
     console.log($scope.currentCart);
   };
 
@@ -192,6 +204,17 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
           $scope.currentCart.splice([i], 1);
         };
       };
+    };
+    // subtract the cost from the total cost
+    $scope.total(item.price, "sub");
+  };
+
+  // calculate total cost of cart
+  $scope.total = function(cost, action) {
+    if (action === "add") {
+      $scope.totalCost += cost;
+    } else {
+      $scope.totalCost -= cost;
     };
   };
 

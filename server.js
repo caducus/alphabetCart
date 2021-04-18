@@ -20,7 +20,7 @@ const usersController = require("./controllers/users.js");
 // Configurations
 // =========================
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI, {
@@ -74,6 +74,6 @@ app.get("/loggedin", (req, res) => {
 // Listener
 // ==========================
 
-app.listen(PORT, () => {
-  console.log("I'm totes listening' on port: " + PORT);
+app.listen(port, () => {
+  console.log("I'm totes listening' on port: " + port);
 });

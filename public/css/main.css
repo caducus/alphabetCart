@@ -81,6 +81,7 @@
   nav {
     text-align: right;
     background-color: slategrey;
+    padding: 5px;
   }
 
   nav a:link, a:visited {
@@ -127,6 +128,13 @@
     background-color: lightblue;
     padding: 3px;
     font-size: 2em;
+  }
+
+  .numberOfItems {
+    background-color: whitesmoke;
+    color: steelblue;
+    border-radius: 50px;
+    padding: 3px;
   }
 
   /* ======= cards ======= */

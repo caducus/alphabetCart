@@ -31,13 +31,14 @@
         <span ng-if="ctrl.loggedInUser">
           <li ng-if="ctrl.shopView"
               ng-click="ctrl.changeInclude('cart'); ctrl.shopView = false;">
-            <a href="#">Cart</a> {{ numberOfItems }}
+            <a href="#">Cart</a>
           </li>
           <li ng-if="!ctrl.shopView"
               ng-click= "ctrl.changeInclude('shop');
                         ctrl.shopView = true">
-            <a href="#">Store</a> {{ numberOfItems }}
+            <a href="#">Store</a>
           </li>
+          <li class="numberOfItems">{{ numberOfItems }}</li>
           <li ng-click="ctrl.logOut()"><a href="#">Log Out</a></li>
         </span>
       </ul>

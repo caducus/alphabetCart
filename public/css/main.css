@@ -1,5 +1,10 @@
-* {
+/* * {
   border: 1px solid gold;
+} */
+
+:root {
+  --font-headers: "Roboto Condensed", sans-serif;
+  --font-text: "Exo 2", sans-serif;
 }
 
 /* ==========================
@@ -8,8 +13,16 @@
 
   /* ====== general ====== */
 
+  body {
+    background-color: whitesmoke;
+    font-family: var(--font-text);
+  }
+
   .wrapper {
     margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
   }
 
   ul {
@@ -26,14 +39,39 @@
   /* ====== header ======= */
 
   header {
+    background-color: whitesmoke;
     text-align: center;
+    padding: 0;
+  }
+
+  h1 {
+    font-family: var(--font-headers);
+    font-size: 4em;
+    color: grey;
+    text-shadow:
+    	-1px -1px 0 black,
+    	1px -1px 0 black,
+    	-1px 1px 0 black,
+    	1px 1px 0 black;
+    margin: 0;
   }
 
   /* ======== nav ======== */
 
   nav {
     text-align: right;
-    background-color: lightblue;
+    background-color: slategrey;
+  }
+
+  nav a:link, a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color: lightblue;
+    font-weight: bold;
   }
 
   /* ======== main ======= */
@@ -59,10 +97,15 @@
 
   /* ======= cards ======= */
 
+  img {
+    border-radius: 5px;
+  }
+
   .itemCard {
     margin: 0 auto;
+    background-color: lightsteelblue;
     width: 255px;
-    border: 1px solid grey;
+    border: 2px solid grey;
     margin: 2px;
   }
 
@@ -136,6 +179,22 @@
 
   .cartCardInfo li {
     display: inline;
+  }
+
+  /* ====== footer ====== */
+
+  footer {
+    background-color: slategrey;
+    text-align: center;
+  }
+
+  footer p {
+    color: white;
+    margin: 1px;
+  }
+
+  h6 {
+    color: white;
   }
 
 /* ==========================

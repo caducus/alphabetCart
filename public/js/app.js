@@ -208,6 +208,8 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
         };
       };
     };
+    // subtract -1 to the total number of items in the cart
+    $scope.numberOfItems -= 1;
     // subtract the cost from the total cost
     $scope.total(item.price, "sub");
   };
@@ -227,6 +229,8 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
     $scope.currentCart = [];
     // reset the totalCost to 0;
     $scope.totalCost = 0;
+    // reset the numberOfItems to 0;
+    $scope.numberOfItems = 0;
     // display "thank you for purchase" message
     $scope.thankYouMessage = "Thank you for your purchase!";
   };

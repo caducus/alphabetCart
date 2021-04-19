@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid gold;
-}
+} */
 
 :root {
   --font-headers: "Roboto Condensed", sans-serif;
@@ -183,6 +183,11 @@
 
   .addEditDelete a {
     text-decoration: none;
+  }
+
+  .fakeButtonAdd a:hover {
+    background-color: steelblue;
+    color: whitesmoke;
   }
 
   /* ======= cart ======= */

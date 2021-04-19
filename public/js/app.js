@@ -189,6 +189,8 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
     $scope.numberOfItems += 1;
     // add the cost to the total cost
     $scope.total(item.price, "add");
+    // clear out the thank you message if previous cart was checked out
+    $scope.thankYouMessage = "";
     console.log($scope.currentCart);
   };
 
@@ -223,7 +225,6 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
   $scope.checkout = function() {
     // empty the cart array
     $scope.currentCart = [];
-    this.getItems();
     // reset the totalCost to 0;
     $scope.totalCost = 0;
     // display "thank you for purchase" message

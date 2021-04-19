@@ -158,39 +158,45 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
 
   // cart functions
   $scope.addToCart = function (item) {
-    // if the cart does not yet exist,
-    if ($scope.currentCart.length === 0) {
-      // add +1 to this item count
-      item.count = 1;
-      // push this item to the cart
-      $scope.currentCart.push(item);
-    // otherwise, if the cart already exists
-    } else {
-      // set duplicateItem to false
-      let duplicateItem = false;
-      // loop through the array of items in the cart to see if this item id matches any of the cart item ids
-      for (let i = 0; i < $scope.currentCart.length; i++) {
-        // if there is a match, set duplicateItem to true
-        if ($scope.currentCart[i]._id === item._id) {
-          duplicateItem = true;
-          // add +1 to the duplicate item count
-          $scope.currentCart[i].count += 1;
-        };
-      };
-      // if this item is not a duplicate
-      if (!duplicateItem) {
+    // if the current item has a stock quantity of 1 or more
+    if (item.stockQuantity >= 1) {
+      // if the cart does not yet exist,
+      if ($scope.currentCart.length === 0) {
         // add +1 to this item count
         item.count = 1;
         // push this item to the cart
         $scope.currentCart.push(item);
+      // otherwise, if the cart already exists
+      } else {
+        // set duplicateItem to false
+        let duplicateItem = false;
+        // loop through the array of items in the cart to see if this item id matches any of the cart item ids
+        for (let i = 0; i < $scope.currentCart.length; i++) {
+          // if there is a match, set duplicateItem to true
+          if ($scope.currentCart[i]._id === item._id) {
+            duplicateItem = true;
+            // add +1 to the duplicate item count
+            $scope.currentCart[i].count += 1;
+          };
+        };
+        // if this item is not a duplicate
+        if (!duplicateItem) {
+          // add +1 to this item count
+          item.count = 1;
+          // push this item to the cart
+          $scope.currentCart.push(item);
+        };
       };
-    };
     // add +1 to the total number of items in the cart
     $scope.numberOfItems += 1;
     // add the cost to the total cost
     $scope.total(item.price, "add");
     // clear out the thank you message if previous cart was checked out
     $scope.thankYouMessage = "";
+    // if the stockQuantity is 0
+    } else {
+      console.log("0 in stock. Item not added to cart.");
+    };
     console.log($scope.currentCart);
   };
 

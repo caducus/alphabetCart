@@ -186,7 +186,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
               updateNumberOfItems = true;
             // if the item count in cart is equal to the item stockQuantity
             } else {
-              console.log("Excedes stock quantity. Item not added to cart.")
+              console.log("Exceeds stock quantity. Item not added to cart.")
             };
           };
         };

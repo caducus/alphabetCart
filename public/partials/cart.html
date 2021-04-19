@@ -4,13 +4,21 @@
       <img ng-src="{{ item.image }}"/>
     </div>
     <div class="cartCardInfo">
-      <ul class="displayInline">
-        <li>{{ item.name }}</li>
+      <h3 class="alignCenter">{{ item.name }}</h3>
+      <ul class="displayInline alignCenter">
         <li>qty: {{ item.count }}</li>
+        <li>${{ item.price * item.count}}</li>
+        <li ng-click="removeFromCart(item)">
+          <a href="#" class="fakeButton">Remove (1) from Cart</a>
+        </li>
       </ul>
-      <p ng-click="removeFromCart(item)"><a href="#">Remove (1) from Cart</a></p>
-      <p>${{ item.price * item.count}}</p>
     </div>
   </div>
-  <p>Total: $ {{ totalCost }}</p>
+  <h2 class="alignRight">Total: $ {{ totalCost }}</h2>
+  <ul class="alignRight">
+    <li ng-click="checkout()">
+      <a href="#" class="fakeButtonCheckout">Checkout</a>
+    </li>
+  </ul>
+  <h2 class="alignCenter">{{ thankYouMessage }}</h2>
 </div>

@@ -1,6 +1,6 @@
-/* * {
+* {
   border: 1px solid gold;
-} */
+}
 
 :root {
   --font-headers: "Roboto Condensed", sans-serif;
@@ -35,6 +35,26 @@
     display: inline;
     margin: 0px 10px;
   }
+
+  .alignCenter {
+    text-align: center;
+  }
+
+  .alignRight {
+    text-align: right;
+  }
+
+    .alignRight a:link, a:visited {
+        color: steelblue;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+    .alignRight a:hover {
+        color: whitesmoke;
+        background-color: steelblue;
+        font-weight: bold;
+      }
 
   /* ====== header ======= */
 
@@ -93,6 +113,20 @@
   input {
     width: 30%;
     height: 20px;
+  }
+
+  .fakeButton {
+    border-radius: 5px;
+    background-color: lightblue;
+    padding: 3px;
+    font-size: 1em;
+  }
+
+  .fakeButtonCheckout {
+    border-radius: 5px;
+    background-color: lightblue;
+    padding: 3px;
+    font-size: 2em;
   }
 
   /* ======= cards ======= */
@@ -174,12 +208,24 @@
   }
 
   .cartCardInfo {
-    width: 200px;
+    width: 450px;
   }
 
-  .cartCardInfo li {
-    display: inline;
-  }
+    .cartCardInfo li {
+      display: inline;
+    }
+
+    .cartCardInfo a:link, a:visited {
+        color: steelblue;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+    .cartCardInfo a:hover {
+        color: whitesmoke;
+        background-color: steelblue;
+        font-weight: bold;
+      }
 
   /* ====== footer ====== */
 

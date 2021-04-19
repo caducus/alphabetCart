@@ -8,6 +8,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
   $scope.numberOfItems = 0;
   $scope.totalCost = 0;
   $scope.currentCart = [];
+  $scope.thankYouMessage = "";
 
   // partial navigation
   this.includePath = "partials/shop.html"
@@ -216,6 +217,17 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
     } else {
       $scope.totalCost -= cost;
     };
+  };
+
+  // checkout
+  $scope.checkout = function() {
+    // empty the cart array
+    $scope.currentCart = [];
+    this.getItems();
+    // reset the totalCost to 0;
+    $scope.totalCost = 0;
+    // display "thank you for purchase" message
+    $scope.thankYouMessage = "Thank you for your purchase!";
   };
 
   // Get initial list of items for sale

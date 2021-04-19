@@ -34,7 +34,7 @@
             <a href="#">Cart</a> {{ ctrl.numberOfItems }}
           </li>
           <li ng-if="!ctrl.shopView"
-              ng-click="ctrl.changeInclude('shop'); ctrl.shopView = true">
+              ng-click="ctrl.changeInclude('shop'); ctrl.shopView = true; thankYouMessage = '' ">
             <a href="#">Store</a>
           </li>
           <li ng-click="ctrl.logOut()"><a href="#">Log Out</a></li>

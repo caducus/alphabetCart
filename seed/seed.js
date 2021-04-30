@@ -44,6 +44,24 @@ var items = [
   stockQuantity: 10
   }),
   new Item({
+  name: "The Letter D",
+  alphabetID: 4,
+  selected: 0,
+  description: "Insert generic text here about how awesome the D is.",
+  image: "images/the_letter_d.gif",
+  price: 7,
+  stockQuantity: 3
+  }),
+  new Item({
+  name: "The Letter E",
+  alphabetID: 5,
+  selected: 0,
+  description: "Like all vowels, this letter is far more versatile and useful than you would ever know. Except U. Nobody likes U.",
+  image: "images/the_letter_e.png",
+  price: 8,
+  stockQuantity: 10
+  }),
+  new Item({
   name: "The Letter F",
   alphabetID: 6,
   selected: 0,
@@ -53,11 +71,47 @@ var items = [
   stockQuantity: 0
   }),
   new Item({
+  name: "The Letter G",
+  alphabetID: 7,
+  selected: 0,
+  description: "Not the most popular letter, but it's still quite good.",
+  image: "images/the_letter_g.png",
+  price: 3,
+  stockQuantity: 7
+  }),
+  new Item({
+  name: "The Letter H",
+  alphabetID: 8,
+  selected: 0,
+  description: "What does this letter even do?",
+  image: "images/the_letter_h.jpeg",
+  price: 1,
+  stockQuantity: 8
+  }),
+  new Item({
+  name: "The Letter M",
+  alphabetID: 13,
+  selected: 0,
+  description: "Like the mountain, this letter comes with some peaks.",
+  image: "images/the_letter_m.gif",
+  price: 4,
+  stockQuantity: 3
+  }),
+  new Item({
+  name: "The Letter S",
+  alphabetID: 19,
+  selected: 0,
+  description: "Extremely versatile, extra curvy, and entirely sibilant.",
+  image: "images/the_letter_s.jpeg",
+  price: 5,
+  stockQuantity: 5
+  }),
+  new Item({
   name: "The Letter U",
   alphabetID: 21,
   selected: 0,
   description: "Although it rarely stands on its own, in combination this letter is most compelling.",
-  image: "images/the_letter_u.jpeg",
+  image: "images/the_letter_u.png",
   price: 3,
   stockQuantity: 3
   })

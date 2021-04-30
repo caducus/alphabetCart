@@ -18,7 +18,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
     this.includePath = "partials/" + path + ".html"
   };
 
-// user functions
+  // user functions
   this.createUser = function () {
     $http({
       method: "POST",
@@ -136,6 +136,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
         stockQuantity: this.updatedQuantity
       }
     }).then(function(response) {
+      // update the items displayed on the page
       controller.getItems();
       console.log(response.data);
       controller.indexOfEditForm = !controller.indexOfEditForm
@@ -149,7 +150,7 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
       method: "DELETE",
       url: "/items/" + item._id
     }).then(function(response) {
-        // update the items displayed on the page
+      // update the items displayed on the page
        controller.getItems();
     }, function(error) {
       console.log(error);

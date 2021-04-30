@@ -2,8 +2,8 @@
 // Dependencies
 // ==========================
 
-const Item = require("../../models/items.js");
-var mongoose = require("mongoose");
+const Item = require("../models/items.js");
+const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/alphabetCart", {
   useCreateIndex: true,
   useFindAndModify: false,
@@ -15,7 +15,7 @@ mongoose.connect("mongodb://localhost:27017/alphabetCart", {
 // Seed Data
 // ==========================
 
-var items = [
+const items = [
   new Item({
   name: "The Letter A",
   alphabetID: 1,

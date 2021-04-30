@@ -84,7 +84,7 @@ allow them to reseed original data to the shop database -->
 <!-- <div>
   <div ng-if="ctrl.userIsAdmin" class="centerDiv">
     <p>If the database is empty, please reseed.</p>
-    <form>
+    <form ng-submit="ctrl.seedDatabase()">
       <input type="submit" value="reseed database">
     </form>
   </div>

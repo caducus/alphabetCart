@@ -219,12 +219,16 @@
   }
 
   .addEditDelete a {
+    color: steelblue;
     text-decoration: none;
   }
 
-  .fakeButtonAdd a:hover {
-    background-color: steelblue;
+  .addEditDelete a:hover {
     color: whitesmoke;
+  }
+
+  .soldOut {
+    color: red;
   }
 
   /* ======= cart ======= */

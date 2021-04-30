@@ -102,7 +102,7 @@
   }
 
   nav a:hover {
-    color: cyan;
+    color: lightblue;
     font-weight: bold;
   }
 
@@ -263,8 +263,30 @@
     margin: 1px;
   }
 
+  footer a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  footer a:hover {
+    color: lightblue;
+    font-weight: bold;
+  }
+
   h6 {
     color: white;
+  }
+
+  .social-media {
+    margin-top: 5px;
+    text-align: center;
   }
 
 /* ==========================

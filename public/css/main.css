@@ -114,6 +114,11 @@
     justify-content: center;
   }
 
+  .centerDiv {
+    margin: 0 auto;
+    text-align: center;
+  }
+
   /* ======= forms ======= */
 
   fieldset {
@@ -147,6 +152,19 @@
     border-radius: 50px;
     padding: 3px;
   }
+
+  .itemCardEditForm {
+    margin: 0 auto;
+  }
+
+    .itemCardEditForm fieldset {
+      margin: 10px;
+    }
+
+    .itemCardEditForm input {
+      width: 45%;
+      height: 20px;
+    }
 
   /* ======= cards ======= */
 
@@ -289,6 +307,12 @@
     text-align: center;
   }
 
+  .mobile-view {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 250px;
+  }
+
 /* ==========================
 | | Browser View
 ========================== */
@@ -299,6 +323,12 @@
 
   .wrapper {
     max-width: 800px;
+  }
+
+  .mobile-view {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 700px;
   }
 
 }

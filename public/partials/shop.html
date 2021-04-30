@@ -53,28 +53,40 @@
     </div>
     <div  class="itemCardEditForm"
           ng-if="ctrl.indexOfEditForm === item._id">
-      <form ng-submit="ctrl.editItem(item)">
-        <input  type="text"
-                ng-value="item.name"
-                ng-model="ctrl.updatedName"/>
-        <input  type="number"
-                ng-value="item.alphabetID"
-                ng-model="ctrl.updatedAlphabetID"/>
-        <input  type="text"
-                ng-value="item.description"
-                ng-model="ctrl.updatedDescription"/>
-        <input  type="number"
-                ng-value="item.price"
-                ng-model="ctrl.updatedCost"/>
-        <input  type="text"
-                ng-value="item.image"
-                ng-model="ctrl.updatedImage"/>
-        <input  type="number"
-                ng-value="item.stockQuantity"
-                ng-model="ctrl.updatedQuantity"/><br>
-        <input type="submit" value="edit item" />
-      </form>
+      <fieldset>
+        <form ng-submit="ctrl.editItem(item)">
+          <input  type="text"
+                  ng-value="item.name"
+                  ng-model="ctrl.updatedName"/>
+          <input  type="number"
+                  ng-value="item.alphabetID"
+                  ng-model="ctrl.updatedAlphabetID"/>
+          <input  type="text"
+                  ng-value="item.description"
+                  ng-model="ctrl.updatedDescription"/>
+          <input  type="number"
+                  ng-value="item.price"
+                  ng-model="ctrl.updatedCost"/>
+          <input  type="text"
+                  ng-value="item.image"
+                  ng-model="ctrl.updatedImage"/>
+          <input  type="number"
+                  ng-value="item.stockQuantity"
+                  ng-model="ctrl.updatedQuantity"/><br>
+          <input type="submit" value="edit item" />
+        </form>
+      </fieldset>
     </div>
+  </div>
+</div>
+<!-- If user is admin
+allow them to reseed original data to the shop database -->
+<div>
+  <div ng-if="ctrl.userIsAdmin" class="centerDiv">
+    <p>If the database is empty, please reseed.</p>
+    <form>
+      <input type="submit" value="reseed database">
+    </form>
   </div>
 </div>
 <!-- Repeated item cards end here -->

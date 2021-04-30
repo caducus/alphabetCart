@@ -2,14 +2,8 @@
 // Dependencies
 // ==========================
 
-const Item = require("../../models/items.js");
+const Item = require("../models/items.js");
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/alphabetCart", {
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
 
 // ==========================
 // Seed Data
@@ -116,20 +110,3 @@ var items = [
   stockQuantity: 3
   })
 ];
-
-// ==========================
-// Function to populate DB
-// ==========================
-
-let done = 0;
-for (let i = 0; i < items.length; i++) {
-  items[i].save(function(error, results) {
-    done++;
-    if (done === items.length) {
-      exit();
-    };
-  });
-};
-function exit() {
-  mongoose.disconnect();
-}

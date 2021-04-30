@@ -18,7 +18,7 @@
 <!-- List all items for sale -->
 <!-- Repeated item cards start here -->
 <div class="showAllItems">
-  <div class="itemCard alignDiv" ng-repeat="item in ctrl.items">
+  <div  class="itemCard alignDiv" ng-repeat="item in ctrl.items">
     <div class="itemCardTitleInfo">
       <div class="itemCardImage">
         <img ng-src={{item.image}}>
@@ -29,9 +29,9 @@
       <div class="itemCardInfo">
         <p>{{ item.description }}</p>
         <ul>
-          <li>In Stock: {{ item.stockQuantity }}</li>
+          <li ng-hide="item.stockQuantity === 0">In Stock: {{ item.stockQuantity }}</li>
+          <li ng-show="item.stockQuantity === 0" class="soldOut">Out of Stock</li>
           <li>${{ item.price }}</li>
-          <!-- <li ng-if="(item.price) === 0" class="soldOut">Out of Stock</li> -->
         </ul>
       </div>
       <div class="addEditDelete">
@@ -69,7 +69,7 @@
           <input  type="number"
                   ng-value="item.stockQuantity"
                   ng-model="ctrl.updatedQuantity"/><br>
-          <input type="submit" value="edit item" />
+          <input  type="submit" value="edit item"/>
         </form>
       </fieldset>
     </div>

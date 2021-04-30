@@ -237,26 +237,10 @@
     border: 1px solid black;
   }
 
-  /* .addEditDelete li {
-    margin: 0 auto;
-    border: 1px solid black;
-    border-radius: 3px;
-    text-align: center;
-    width: 33%;
-    margin-bottom: 15px;
-  } */
-
-  /* .addEditDelete a {
-    color: steelblue;
-    text-decoration: none;
-  }
-
-  .addEditDelete a:hover {
-    color: whitesmoke;
-  } */
-
   .soldOut {
     color: red;
+    text-align: center;
+    font-weight: bold;
   }
 
   /* ======= cart ======= */

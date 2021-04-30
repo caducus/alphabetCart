@@ -65,6 +65,11 @@ app.controller("MainCtrl", ["$http", "$scope", function($http, $scope) {
       console.log(response.data);
       controller.loggedInUser = null;
       controller.userIsAdmin = null;
+      // if user is in cart, switch back to shop
+      controller.includePath = "partials/shop.html"
+      controller.shopView = true;
+      // if user is admin and has an edit form open, close edit form
+      controller.indexOfEditForm = null;
     }, function(error) {
       console.log(error);
     });

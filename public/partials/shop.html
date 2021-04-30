@@ -18,7 +18,7 @@
 <!-- List all items for sale -->
 <!-- Repeated item cards start here -->
 <div class="showAllItems">
-  <div class="itemCard" ng-repeat="item in ctrl.items">
+  <div class="itemCard alignDiv" ng-repeat="item in ctrl.items">
     <div class="itemCardTitleInfo">
       <div class="itemCardImage">
         <img ng-src={{item.image}}>
@@ -34,22 +34,17 @@
           <!-- <li ng-if="(item.price) === 0" class="soldOut">Out of Stock</li> -->
         </ul>
       </div>
-      <div>
-        <ul class="addEditDelete">
-          <li ng-if="ctrl.userIsAdmin"
-              ng-click="ctrl.indexOfEditForm = item._id"
-              ng-dblclick="ctrl.indexOfEditForm = null">
-              <a href="#" class="fakeButtonAdd">Edit</a>
-          </li>
-          <li ng-if="ctrl.userIsAdmin"
-              ng-click="ctrl.deleteItem(item)">
-              <a href="#" class="fakeButtonAdd">Delete</a>
-          </li>
-          <li ng-if="ctrl.loggedInUser"
-              ng-click="addToCart(item)">
-              <a href="#" class="fakeButtonAdd">Add to Cart</a>
-          </li>
-        </ul>
+      <div class="addEditDelete">
+        <input type="submit" value="Edit"
+            ng-if="ctrl.userIsAdmin"
+            ng-click="ctrl.indexOfEditForm = item._id"
+            ng-dblclick="ctrl.indexOfEditForm = null" />
+        <input type="submit" value="Delete"
+            ng-if="ctrl.userIsAdmin"
+            ng-click="ctrl.deleteItem(item)" />
+        <input type="submit" value="Add to Cart"
+            ng-if="ctrl.loggedInUser"
+            ng-click="addToCart(item)" />
       </div>
     </div>
     <div  class="itemCardEditForm"

@@ -209,23 +209,51 @@
     margin: 10px;
   }
 
-  .addEditDelete li {
+  .alignDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .addEditDelete {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .addEditDelete input {
+    color: steelblue;
+    background-color: whitesmoke;
+    border: 1px solid steelblue;
+    width: 30%;
+    margin: .5px;
+    padding: 3px;
+    height: 28px;
+    border-radius: 5px;
+  }
+
+  .addEditDelete input:hover {
+    color: black;
+    background-color: lightblue;
+    border: 1px solid black;
+  }
+
+  /* .addEditDelete li {
     margin: 0 auto;
     border: 1px solid black;
     border-radius: 3px;
     text-align: center;
     width: 33%;
     margin-bottom: 15px;
-  }
+  } */
 
-  .addEditDelete a {
+  /* .addEditDelete a {
     color: steelblue;
     text-decoration: none;
   }
 
   .addEditDelete a:hover {
     color: whitesmoke;
-  }
+  } */
 
   .soldOut {
     color: red;

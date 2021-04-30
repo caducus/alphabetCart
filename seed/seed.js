@@ -66,7 +66,7 @@ var items = [
   alphabetID: 6,
   selected: 0,
   description: "One of the most popular letters, you'll rarely find it in stock.",
-  image: "images/the_letter_f.jpeg",
+  image: "images/the_letter_f.png",
   price: 10,
   stockQuantity: 0
   }),
